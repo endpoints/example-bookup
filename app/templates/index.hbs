@@ -1,0 +1,8 @@
+{{outlet}}
+
+{{#each book in model}}
+    <p>{{book.title}} - {{book.datePublished}}</p>
+    {{#each chapter in book.chapters}}
+	<li>{{chapter.title}}</li>
+    {{/each}}
+{{/each}}
