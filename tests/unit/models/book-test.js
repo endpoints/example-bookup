@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import {
   moduleForModel,
   test
@@ -12,5 +13,13 @@ test('it exists', function(assert) {
   var model = this.subject();
   // var store = this.store();
   assert.ok(!!model);
+});
 
+test('chapters relationship', function(assert) {
+  var request = this.store().modelFor('book');
+
+  var relationship = Ember.get(request, 'relationshipsByName').get('chapters');
+
+  assert.equal(relationship.key, 'chapters');
+  assert.equal(relationship.kind, 'hasMany');
 });
