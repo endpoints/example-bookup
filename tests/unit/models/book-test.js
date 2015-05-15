@@ -5,11 +5,12 @@ import {
 
 moduleForModel('book', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:chapter']
 });
 
 test('it exists', function(assert) {
   var model = this.subject();
   // var store = this.store();
   assert.ok(!!model);
+
 });
