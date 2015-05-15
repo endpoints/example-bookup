@@ -19,6 +19,14 @@ module.exports = function(environment) {
     }
   };
 
+  // Ref: http://content-security-policy.com/ and https://github.com/rwjblue/ember-cli-content-security-policy
+  ENV.contentSecurityPolicy = {
+    'connect-src': "'self' " + ENV.apiURL,
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com",
+    'img-src': "'self'",
+    'font-src': "'self' http://fonts.gstatic.com/ https://fonts.gstatic.com/"
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
