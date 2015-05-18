@@ -1,0 +1,25 @@
+{{outlet}}
+
+{{#with model}}
+  <div class="book-page">
+    <h2 class="book-title">{{title}}</h2>
+    <h3 class="book-author">{{author.name}}</h3>
+    <p>
+      Published
+      <time datetime="{{datePublished}}" title="{{datePublished}}">
+        {{time-ago-in-words datePublished}}
+      </time>
+    </p>
+
+    {{#each photo in photos}}
+      <img src="{{ photo.uri }}" class="book-photo">
+    {{/each}}
+
+    <h3>Chapters:</h3>
+    <ul>
+      {{#each chapter in chapters}}
+         <li>{{chapter.title}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/with}}

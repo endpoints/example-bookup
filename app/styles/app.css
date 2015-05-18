@@ -22,9 +22,19 @@ h2 {
   margin-top: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 12px 12px;
 }
 
 .flex {
@@ -62,5 +72,16 @@ h2 {
   display: block;
   margin: 12px auto;
   width: 80%;
-  box-shadow: -7px -1px 10px 1px #7d83b4;
+}
+
+.book-page .book-photo {
+  width: 300px;
+  float: right;
+  display: block;
+}
+
+@media screen and (max-width: 496px) {
+  .book-page .book-photo {
+    float: none;
+  }
 }
