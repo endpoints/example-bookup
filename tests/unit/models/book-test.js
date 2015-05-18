@@ -6,7 +6,7 @@ import {
 
 moduleForModel('book', {
   // Specify the other units that are required for this test.
-  needs: ['model:chapter', 'model:series', 'model:photo', 'model:author']
+  needs: ['model:chapter', 'model:photo', 'model:author']
 });
 
 test('it exists', function(assert) {
@@ -31,15 +31,6 @@ test('photos relationship', function(assert) {
 
   assert.equal(relationship.key, 'photos');
   assert.equal(relationship.kind, 'hasMany');
-});
-
-test('series relationship', function(assert) {
-  var request = this.store().modelFor('book');
-
-  var relationship = Ember.get(request, 'relationshipsByName').get('series');
-
-  assert.equal(relationship.key, 'series');
-  assert.equal(relationship.kind, 'belongsTo');
 });
 
 test('author relationship', function(assert) {
