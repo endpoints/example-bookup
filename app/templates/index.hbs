@@ -1,10 +1,17 @@
 {{outlet}}
 
-{{#each book in model}}
-    <p>{{book.title}} - {{book.datePublished}}</p>
-    <ul>
-      {{#each chapter in book.chapters}}
-         <li>{{chapter.title}}</li>
-      {{/each}}
-    </ul>
-{{/each}}
+<div class="flex">
+  {{#each book in model}}
+    <div class="book">
+      <h2>{{book.title}}</h2>
+      <p>{{book.datePublished}}</p>
+
+      <h3>Chapters:</h3>
+      <ul>
+        {{#each chapter in book.chapters}}
+           <li>{{chapter.title}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</div>
