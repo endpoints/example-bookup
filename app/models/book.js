@@ -7,5 +7,5 @@ export default DS.Model.extend({
   firstChapter: DS.attr(),
   series: DS.belongsTo('series'),
   photos: DS.hasMany('photo'),
-  author: DS.attr()
+  author: DS.belongsTo('author')
 });

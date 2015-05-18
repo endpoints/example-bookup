@@ -23,7 +23,7 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     'connect-src': "'self' " + ENV.apiURL,
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com",
-    'img-src': "'self'",
+    'img-src': "'self' http://upload.wikimedia.org",
     'font-src': "'self' http://fonts.gstatic.com/ https://fonts.gstatic.com/"
   }
 

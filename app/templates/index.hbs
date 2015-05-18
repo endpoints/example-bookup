@@ -3,8 +3,23 @@
 <div class="flex">
   {{#each book in model}}
     <div class="book">
-      <h2>{{book.title}}</h2>
-      <p>{{book.datePublished}}</p>
+      <h2 class="book-title">{{book.title}}</h2>
+      <h3 class="book-author">{{book.author.name}}</h3>
+      <p>
+        Published
+        <time datetime="{{book.datePublished}}" title="{{book.datePublished}}">
+          {{time-ago-in-words book.datePublished}}
+        </time>
+      </p>
+
+
+      {{#each photo in book.photos}}
+        <img src="{{ photo.uri }}" class="book-photo">
+      {{/each}}
+
+      {{#if book.series}}
+        <p class="book-series">on {{book.series.title}}</p>
+      {{/if}}
 
       <h3>Chapters:</h3>
       <ul>
