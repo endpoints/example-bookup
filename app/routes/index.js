@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return this.store.find('book', {
       include: ['chapters', 'photos', 'author', 'series'].join(','),
       filter: {
-        published_after: '1990-01-01'
+        // published_after: '1990-01-01'
       }
     });
   }
